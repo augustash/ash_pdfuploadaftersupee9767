@@ -6,6 +6,12 @@ See StackOverFlow question and answer:
 
 [After Magento 1.9 SUPEE-9767 allow pdf upload not working - Invalid Mime Type](https://stackoverflow.com/a/44828074)
 
+## Overrides
+
++ `Mage_Core_Model_File_Validator_Image` (skips validation if mime type is `application/pdf`)
++ `Mage_Cms_Model_Wysiwyg_Images_Storage` (skips resizing if mime type is `application/pdf`)
++ Adds `pdf` to array of `allowed` and `image_allowed` extensions
+
 
 ## Installation
 
@@ -15,4 +21,5 @@ See StackOverFlow question and answer:
 
 ## Dependencies
 
-* `Mage_Core`
++ `Mage_Core`
++ `Mage_Cms`

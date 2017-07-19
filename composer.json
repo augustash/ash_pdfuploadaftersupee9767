@@ -1,0 +1,17 @@
+{
+    "name": "augustash/ash_pdfuploadaftersupee9767",
+    "description": "Fix/allow PDF files to be uploaded via WYSIWYG image upload process after the SUPEE-9767 security patch changed file validation in Mage_Core_Model_File_Validator_Image.",
+    "homepage": "https://github.com/augustash/ash_pdfuploadaftersupee9767.git",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Josh Johnson",
+            "email": "jjohnson@augustash.com"
+        }
+    ],
+    "type": "magento-module",
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*",
+        "augustash/ash_core": "*",
+    }
+}

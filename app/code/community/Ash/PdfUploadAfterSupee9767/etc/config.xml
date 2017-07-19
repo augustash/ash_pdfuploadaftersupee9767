@@ -42,6 +42,11 @@
                     <file_validator_image>Ash_PdfUploadAfterSupee9767_Model_Rewrite_Core_File_Validator_Image</file_validator_image>
                 </rewrite>
             </core>
+            <cms>
+                <rewrite>
+                    <wysiwyg_images_storage>Ash_PdfUploadAfterSupee9767_Model_Rewrite_Cms_Wysiwyg_Images_Storage</wysiwyg_images_storage>
+                </rewrite>
+            </cms>
         </models>
     </global>
 
@@ -55,6 +60,20 @@
                 </Ash_PdfUploadAfterSupee9767>
             </modules>
         </translate>
+
+        <!-- Adds pdf to the array of allowed extensions -->
+        <cms>
+            <browser>
+                <extensions>
+                    <allowed>
+                        <pdf>1</pdf>
+                    </allowed>
+                    <image_allowed>
+                        <pdf>1</pdf>
+                    </image_allowed>
+                </extensions>
+            </browser>
+        </cms>
     </adminhtml>
 
     <default>

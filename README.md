@@ -15,4 +15,4 @@ See StackOverFlow question and answer:
 
 ## Dependencies
 
-* [Ash_Core](https://github.com/augustash/ash_core)
+* `Mage_Core`

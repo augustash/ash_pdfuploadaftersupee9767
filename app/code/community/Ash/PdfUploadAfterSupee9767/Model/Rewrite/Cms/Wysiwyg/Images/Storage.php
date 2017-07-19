@@ -28,8 +28,10 @@ class Ash_PdfUploadAfterSupee9767_Model_Rewrite_Cms_Wysiwyg_Images_Storage exten
      */
     public function resizeFile($source, $keepRation = true)
     {
+        $isEnabled = Mage::helper('ash_pdfuploadaftersupee9767')->isEnabled();
+
         $mimeType = mime_content_type($source);
-        if ($mimeType == 'application/pdf') {
+        if ($isEnabled && $mimeType == 'application/pdf') {
             return false;
         } else {
             parent::resizeFile($source, $keepRation);

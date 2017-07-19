@@ -24,7 +24,9 @@ class Ash_PdfUploadAfterSupee9767_Model_Rewrite_Core_File_Validator_Image extend
      */
     public function validate($filePath)
     {
-        if (mime_content_type($filePath) == 'application/pdf') {
+        $isEnabled = Mage::helper('ash_pdfuploadaftersupee9767')->isEnabled();
+
+        if ($isEnabled && mime_content_type($filePath) == 'application/pdf') {
             return null;
         } else {
             parent::validate($filePath);

@@ -24,7 +24,7 @@
     </tabs>
     <sections>
         <ash_pdfuploadaftersupee9767 translate="label" module="ash_pdfuploadaftersupee9767">
-            <label>PDF Uploads</label>
+            <label>PDF Uploads (WYSIWYG)</label>
             <tab>ash</tab>
             <frontend_type>text</frontend_type>
             <sort_order>210</sort_order>

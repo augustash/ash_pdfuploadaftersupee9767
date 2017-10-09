@@ -34,7 +34,7 @@ class Ash_PdfUploadAfterSupee9767_Model_Rewrite_Cms_Wysiwyg_Images_Storage exten
         if ($isEnabled && $mimeType == 'application/pdf') {
             return false;
         } else {
-            parent::resizeFile($source, $keepRation);
+            return parent::resizeFile($source, $keepRation);
         }
     }
  }

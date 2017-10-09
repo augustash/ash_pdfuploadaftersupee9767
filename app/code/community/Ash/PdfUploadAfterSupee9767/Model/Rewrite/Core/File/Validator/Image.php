@@ -29,7 +29,7 @@ class Ash_PdfUploadAfterSupee9767_Model_Rewrite_Core_File_Validator_Image extend
         if ($isEnabled && mime_content_type($filePath) == 'application/pdf') {
             return null;
         } else {
-            parent::validate($filePath);
+            return parent::validate($filePath);
         }
     }
 }

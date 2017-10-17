@@ -29,7 +29,7 @@ class Ash_PdfUploadAfterSupee9767_Helper_Data extends Mage_Core_Helper_Abstract
         }
         return false;
     }
-    
+
     /**
      * is PDF file
      * @param $filename
@@ -37,29 +37,22 @@ class Ash_PdfUploadAfterSupee9767_Helper_Data extends Mage_Core_Helper_Abstract
      */
     public function isAllowed($filename){
         $mimeTypeAllowed = 'application/pdf';
-        if(function_exists('mime_content_type'))
+        if(function_exists('mime_content_type')) {
             $mimeType = mime_content_type($filename);
-        else
-            $mimeType = $this->_mime_content_type($filename);
-
-        if($mimeType == $mimeTypeAllowed)
-            return true;
-        else
-            return false;
-    }
-
-    /**
-     * mime_content_type could be undefined
-     * @see Uncaught Error: Call to undefined function mime_content_type()
-     * @param $filename
-     * @return bool|string
-     */
-    private function _mime_content_type($filename) {
-        $result = new finfo();
-
-        if (is_resource($result) === true) {
-            return $result->file($filename, FILEINFO_MIME_TYPE);
         }
-        return false;
+        elseif(function_exists("finfo_open")) {
+            $finfo = finfo_open(FILEINFO_MIME);
+            $mimeType = finfo_file($finfo, $filename);
+        }
+        else{
+            $mimeType = '';
+        }
+
+        if(strpos($mimeType, $mimeTypeAllowed) !== false) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 }

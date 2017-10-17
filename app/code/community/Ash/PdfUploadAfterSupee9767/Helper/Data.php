@@ -29,4 +29,30 @@ class Ash_PdfUploadAfterSupee9767_Helper_Data extends Mage_Core_Helper_Abstract
         }
         return false;
     }
+
+    /**
+     * is PDF file
+     * @param $filename
+     * @return bool
+     */
+    public function isAllowed($filename){
+        $mimeTypeAllowed = 'application/pdf';
+        if(function_exists('mime_content_type')) {
+            $mimeType = mime_content_type($filename);
+        }
+        elseif(function_exists("finfo_open")) {
+            $finfo = finfo_open(FILEINFO_MIME);
+            $mimeType = finfo_file($finfo, $filename);
+        }
+        else{
+            $mimeType = '';
+        }
+
+        if(strpos($mimeType, $mimeTypeAllowed) !== false) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }
